@@ -72,11 +72,3 @@ jobs:
           task-definition: .aws/task-definition.json
           container-name: octochat
           image: ${{ steps.build-image.outputs.image }}
-
-      - name: Deploy Amazon ECS task definition
-        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-        with:
-          task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: octochat-alb
-          cluster: octochat
-          wait-for-service-stability: true
