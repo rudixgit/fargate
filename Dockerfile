@@ -11,5 +11,5 @@ RUN npm ci --only=production
 # Bundle app source
 COPY app .
 
-EXPOSE 8000
+EXPOSE 80
 ENTRYPOINT ["node", "/app/server.js"]
